@@ -18,26 +18,51 @@ public class TankPlayer extends Canvas
 		
 		public void paint(Graphics g)
 		{
-			
-			int w = 0;
-			int h = 0;
-			for(int i = 0; i < 700; i++)
+			g.fillRect(600, 600, 50, 20);
+			int [] xV = {630, 630, 570, 530};
+			int [] yV = {620, 590, 560, 560};
+			g.fillPolygon(xV, yV , 4);
+			g.setColor(Color.gray);
+			g.fillOval(40, 40, 60, 30);
+			g.setColor(Color.gray);
+			g.fillOval(15, 60, 110, 30);
+			for(int i = 500; i >= 0; i--)
 				{
-					w+=2;
-					h+= 1;
-			g.drawArc(0, 500, w, h, 0, 180);
-			delay();
-			g.setColor(Color.white);
-			g.drawArc(0, 500, w, h, 0, 180);
-			delay();
+					g.setColor(Color.red);
+					g.fillOval(i,i, 20, 20);
+					delay();
+					
+					g.setColor(Color.WHITE);
+					g.fillOval(i, i, 21, 21);
+				
+					
 				}
-			//			g.drawArc(x, y, width, height, startAngle, arcAngle);
+			for(int b = 500; b >= 0; b--)
+				{
+					g.setColor(Color.red);
+					g.fillOval(b ,b , 20, 20);
+					delay();
+					
+					g.setColor(Color.WHITE);
+					g.fillOval(b, b, 21, 21);
+					
+				}
+			for(int c = 500; c >= 0; c--)
+				{
+					g.setColor(Color.red);
+					g.fillOval(c, c, 20, 20);
+					delay();
+					
+					g.setColor(Color.WHITE);
+					g.fillOval(c, c, 21, 21);
+				}
+			
 		}
 		public void delay()
 			{
 	        try
 					{
-					Thread.sleep(80);
+					Thread.sleep(2);
 					} catch (InterruptedException e)
 					{
 					e.printStackTrace();
